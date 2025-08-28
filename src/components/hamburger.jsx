@@ -1,7 +1,7 @@
 export default function Hamburger({ isOpen, setIsOpen }) {
 	return (
 		<div onClick={() => setIsOpen(!isOpen)} className="w-14 h-14 flex justify-center items-center cursor-pointer relative bg-secondBackground rounded-full md:hidden">
-			<svg className="w-8 h-8 absolute" viewBox="0 0 64 64">
+			<svg className="w-9 h-9 absolute" viewBox="0 0 64 64">
 				<circle cx="32" cy="32" r="30" fill="none" stroke="white" strokeWidth="2" strokeDasharray="188.4" strokeDashoffset={isOpen ? 0 : 188.4} className="transition-all duration-500 ease-out" />
 			</svg>
 

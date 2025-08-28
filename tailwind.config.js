@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         background: "var(--color-background)",
         secondBackground: "var(--color-secondBackground)",
+        thirdBackground: "var(--color-thirdBackground)",
         text: "var(--color-text)",
         button: "var(--color-button)",
       },

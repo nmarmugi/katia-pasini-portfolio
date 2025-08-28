@@ -33,7 +33,7 @@ export default function About() {
 					<div className="flex flex-col lg:flex-row gap-4 w-full">
 						{contentCards.map((card) => (
 							<div key={card.number} className="w-full lg:w-1/3">
-								<Card>
+								<Card border={true}>
 									<h4 className="font-inter text-text font-bold text-3xl">
 										{card.number}
 									</h4>
