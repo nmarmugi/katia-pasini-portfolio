@@ -16,18 +16,18 @@ export default function About() {
 					<div className="flex items-center gap-5">
 						<img className="w-24 h-24 block md:hidden" src="/katia-mobile.png" alt='Katia image' />
 						<div>
-							<h2 className="font-inter italic text-text font-extralight text-sm">
+							<h2 className="font-inter italic text-text font-extralight text-sm md:text-2xl">
 								Dietro ogni pixel c'è una persona
 							</h2>
-							<h1 className="font-inter text-text font-semibold text-3xl">
+							<h1 className="font-inter text-text font-semibold text-3xl md:text-[40px]">
 								Sono Katia, UX/UI Designer
 							</h1>
 						</div>
 					</div>
-					<h3 className="font-inter text-text font-light">
+					<h3 className="font-inter text-text font-light md:text-2xl">
 						Sono quella che ti chiederà: <span className="font-inter text-text font-medium">“Perché hai messo quel bottone proprio lì?”</span> e che testerà la tua app con la nonna, per capire se è davvero intuitiva!
 					</h3>
-					<h3 className="font-inter text-text font-light">
+					<h3 className="font-inter text-text font-light md:text-2xl">
 						🐶 Quando non sono su Figma, <span className="font-inter text-text font-medium">recensisco ristoranti o passeggio con Brando,</span> il mio Jack Russell (molto critico).
 					</h3>
 					<div className="flex flex-col lg:flex-row gap-4 w-full">
