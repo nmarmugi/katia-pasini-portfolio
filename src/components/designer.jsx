@@ -48,7 +48,7 @@ export default function Designer() {
 							<img className="w-full max-w-[470px] lg:w-[470px] lg:min-h-[432.39px] cursor-pointer" src="/katia-brando.png" alt="Katia e Brando" />
 							{
 								showTooltip &&
-									<img src="/Tooltip.png" alt="tooltip" className="absolute -top-8 w-52 lg:right-40 lg:-top-5"/>
+									<img src="/Tooltip.png" alt="tooltip" className="absolute right-32 -top-5 w-52 lg:right-32 lg:-top-5"/>
 							}
 						</div>
 						<div className="w-full flex justify-center max-w-[470px] lg:w-[470px] lg:min-w-[470px] lg:min-h-[432.39px]">
