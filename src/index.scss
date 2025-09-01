@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caladea:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
 @tailwind base;
 @tailwind components;
@@ -8,6 +10,7 @@
   --color-background: #0A0E2A;
   --color-secondBackground: #2F354F;
   --color-thirdBackground: #191E39;
+  --color-glideBackground: #8592CA;
   --color-card1: #9A38A7;
   --color-card2: #394DA8;
   --color-card3: #BE0D86;
