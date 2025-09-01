@@ -69,7 +69,7 @@ export default function Glide() {
 												))}
 											</div>
 
-											<div className="bg-purpleGradient p-3 rounded-xl font-inter text-text text-xs font-light italic flex flex-col gap-1 md:text-lg">
+											<div className="max-w-[312px] md:max-w-[450px] bg-purpleGradient p-3 rounded-xl font-inter text-text text-xs font-light italic flex flex-col gap-1 md:text-lg">
 												<h4>
 													{gli.secondTitle}
 												</h4>
