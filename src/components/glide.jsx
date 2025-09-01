@@ -51,7 +51,7 @@ export default function Glide() {
 										<div className="w-full md:w-1/3 lg:w-1/2">
 											<img src={gli.src} alt="Image Projects" />
 										</div>
-										<div className="flex flex-col items-center gap-4 w-full md:w-2/3 lg:w-1/2">
+										<div className="flex flex-col items-center md:items-start gap-4 w-full md:w-2/3 lg:w-1/2">
 											<div className="text-center md:text-start">
 												<h3 className="font-inter text-text text-lg md:text-3xl font-semibold md:mb-2">
 													{gli.title}
