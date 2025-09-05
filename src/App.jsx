@@ -3,6 +3,7 @@ import About from "./components/about";
 import SecondBanner from "./components/secondBanner";
 import Designer from "./components/designer";
 import Glide from "./components/glide";
+import HowWork from "./components/howWork";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <SecondBanner />
       <Designer />
       <Glide />
+      <HowWork />
     </div>
   );
 }
