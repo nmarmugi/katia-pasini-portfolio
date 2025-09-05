@@ -4,6 +4,7 @@ import SecondBanner from "./components/secondBanner";
 import Designer from "./components/designer";
 import Glide from "./components/glide";
 import HowWork from "./components/howWork";
+import Reviews from "./components/reviews";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Designer />
       <Glide />
       <HowWork />
+      <Reviews />
     </div>
   );
 }

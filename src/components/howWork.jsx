@@ -133,19 +133,18 @@ export default function HowWork() {
 			</div>
 			{activeModal !== null && (
 				<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setActiveModal(null)}>
-					<div className="bg-white text-black rounded-xl p-6 w-[90%] max-w-5xl relative max-h-[90dvh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+					<div className="bg-white text-black rounded-xl p-6 w-[90%] max-w-5xl relative" onClick={(e) => e.stopPropagation()}>
 						<button className="absolute top-3 right-3 text-xl" onClick={() => setActiveModal(null)}>
 							<FiXCircle size={25} />
 						</button>
 
-						<span className="text-2xl lg:text-[40px]">
-							{modalContent[activeModal].src}
-						</span>
-						<h2 className="font-inter font-semibold text-2xl lg:text-[40px] mt-2 mb-4 lg:mt-6 lg:mb-12">
-							{modalContent[activeModal].title}
-						</h2>
-
-						<div className="flex flex-col gap-4 font-inter font-light lg:text-2xl">
+						<div className="flex flex-col gap-4 font-inter font-light lg:text-2xl max-h-[90dvh] overflow-y-auto">
+							<span className="text-2xl lg:text-[40px] lg:mt-4">
+								{modalContent[activeModal].src}
+							</span>
+							<h2 className="font-inter font-semibold text-2xl lg:text-[40px] mt-2 mb-4 lg:mt-6 lg:mb-12">
+								{modalContent[activeModal].title}
+							</h2>
 							<div className="bg-[#FFEEEE] flex flex-col p-3 lg:px-5 rounded-xl gap-2">
 								<div className="flex items-center gap-1">
 									<FiAlertCircle size={20} color="#B42318"/>
