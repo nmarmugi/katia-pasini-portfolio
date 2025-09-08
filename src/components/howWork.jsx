@@ -81,27 +81,19 @@ export default function HowWork() {
 	}, [activeModal]);
 
 	return (
-		<div className="bg-background px-5 py-10 flex justify-center items-center">
+		<div className="bg-blueGradientOrizontal px-5 py-10 flex justify-center items-center">
 			<div className="w-full max-w-[1440px] flex flex-col justify-center items-center md:px-10 gap-10 md:gap-20">
-				<div className="bg-glideBackground w-full flex flex-col items-center justify-center gap-4 py-6 px-4 rounded-xl">
-					<h4 className="text-text font-inter font-semibold text-xl md:text-2xl text-center">
-						Vuoi avere maggiori info sui progetti o conoscerne di nuovi?
-					</h4>
-					<a href={'#'} className="p-2 px-3 rounded-full text-md font-inter bg-button text-text">
-						Contattami
-					</a>
-				</div>
 				<div className="w-full flex flex-col items-start gap-2 md:gap-4">
-					<h2 className="font-inter text-text font-semibold text-2xl text-center md:text-[40px]">
+					<h2 className="font-inter text-testBackground font-semibold text-2xl text-center md:text-[40px] md:mb-2">
 						Come lavoro - 3 storie vere
 					</h2>
-					<p className="font-inter text-text text-lg md:text-[26px] mb-2">
+					<p className="font-inter text-testBackground text-lg md:text-[26px] mb-2">
 						Ogni progetto racconta qualcosa di diverso. Ecco come affronto le sfide reali, con metodo e un pizzico di creatività!
 					</p>
 					<div className="w-full flex flex-col lg:flex-row justify-between items-center gap-3">
 						{
 							cards.map((card => 
-								<div key={card.id} className="w-full lg:w-1/3 bg-secondBackground p-3 rounded-lg flex flex-col gap-2 text-text lg:h-[270px] justify-center text-lg md:text-[22px]">
+								<div key={card.id} className="w-full lg:w-1/3 bg-text2 p-3 rounded-lg flex flex-col gap-2 text-testBackground lg:h-[270px] justify-center text-lg md:text-[22px]">
 									<span>
 										{card.src}
 									</span>
@@ -119,30 +111,19 @@ export default function HowWork() {
 						}
 					</div>
 				</div>
-				<div className="bg-glideBackground w-full flex flex-col items-center justify-center gap-4 py-6 px-4 rounded-xl">
-					<h4 className="text-text font-inter font-semibold text-xl md:text-2xl text-center">
-						Vogliamo costruire un prodotto che piace davvero, a chi lo usa e a chi lo crea?
-					</h4>
-					<a href={'#'} className="p-2 px-3 rounded-full text-md font-inter bg-button text-text">
-						Parliamo di come evitare i loop creativi
-					</a>
-					<span className="text-text font-inter font-light italic text-sm  md:text-base text-center">
-						Perché il design migliore nasce dal dialogo tra chi lo pensa, chi lo costruisce e chi lo racconta.
-					</span>
-				</div>
 			</div>
 			{activeModal !== null && (
 				<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setActiveModal(null)}>
-					<div className="bg-white text-black rounded-xl p-6 w-[90%] max-w-5xl relative" onClick={(e) => e.stopPropagation()}>
+					<div className="bg-white text-black rounded-xl p-6 px-9 md:px-6 w-[90%] max-w-5xl relative" onClick={(e) => e.stopPropagation()}>
 						<button className="absolute top-3 right-3 text-xl" onClick={() => setActiveModal(null)}>
-							<FiXCircle size={25} />
+							<FiXCircle size={25} color="#063550" />
 						</button>
 
 						<div className="flex flex-col gap-4 font-inter font-light lg:text-2xl max-h-[90dvh] overflow-y-auto">
 							<span className="text-2xl lg:text-[40px] lg:mt-4">
 								{modalContent[activeModal].src}
 							</span>
-							<h2 className="font-inter font-semibold text-2xl lg:text-[40px] mt-2 mb-4 lg:mt-6 lg:mb-12">
+							<h2 className="font-inter text-text2 font-semibold text-2xl lg:text-[40px] mt-2 mb-4 lg:mt-6 lg:mb-12">
 								{modalContent[activeModal].title}
 							</h2>
 							<div className="bg-[#FFEEEE] flex flex-col p-3 lg:px-5 rounded-xl gap-2">

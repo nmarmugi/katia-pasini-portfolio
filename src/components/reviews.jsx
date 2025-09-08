@@ -70,13 +70,13 @@ export default function Reviews() {
 	const mobileReviews = showAllMobile ? reviews : reviews.slice(0, 3);
 
 	return (
-		<div className="bg-background px-5 py-10 flex justify-center items-center">
+		<div id="references" className="bg-testBackground px-5 py-10 flex justify-center items-center">
 			<div className="w-full max-w-[1440px] flex flex-col justify-center items-center md:px-10 gap-10">
 				<div className="flex flex-col gap-4">
-					<h2 className="font-inter text-text font-semibold text-2xl md:text-[40px]">
+					<h2 className="font-inter text-text2 font-semibold text-2xl md:text-[40px] md:mb-2">
 						Cosa dicono di me
 					</h2>
-					<p className="font-inter text-text text-lg md:text-[26px]">
+					<p className="font-inter text-p text-lg md:text-[26px]">
 						Collaborare bene è parte del mio lavoro. Ecco cosa raccontano di me le persone con cui ho condiviso processi, problemi e soluzioni.
 					</p>
 				</div>
@@ -85,19 +85,19 @@ export default function Reviews() {
 						<div className="glide__track overflow-hidden relative lg:pb-20" data-glide-el="track">
 							<div className="glide__slides h-full">
 								{reviews.map((r) => (
-									<div key={r.id} className={`glide__slide bg-secondBackground rounded-xl p-5 min-h-[267px] flex flex-col gap-2 text-text items-start font-inter relative transition-all duration-500 ease-in-out ${expandedCardId === r.id ? "max-h-[350px] overflow-y-auto shadow-lg" : "max-h-[300px] overflow-hidden"}`}>
+									<div key={r.id} className={`glide__slide bg-text2 rounded-xl p-5 min-h-[267px] flex flex-col gap-2 items-start font-inter relative transition-all duration-500 ease-in-out ${expandedCardId === r.id ? "max-h-[350px] overflow-y-auto shadow-lg" : "max-h-[300px] overflow-hidden justify-center"}`}>
 										<img className="absolute right-4 top-2" src="/linkedin.svg" alt="Linkedin logo" />
 										<div className="flex gap-2 items-center">
-											<span className="text-xl font-semibold bg-background rounded-full flex w-11 h-11 justify-center items-center">
+											<span className="text-xl font-semibold bg-testBackground rounded-full flex w-11 h-11 justify-center items-center">
 												{r.iniziale}
 											</span>
-											<div className="text-sm font-medium">
+											<div className="text-sm font-medium text-testBackground">
 												<h3>{r.name}</h3>
 												<p>{r.role}</p>
 												<img src="/stars.png" alt="Stars" />
 											</div>
 										</div>
-										<p className="mt-2 whitespace-pre-line">
+										<p className="mt-2 whitespace-pre-line text-testBackground">
 											"{expandedCardId === r.id ? r.review : r.review.length > 86 ? r.review.slice(0, 86) + "..." : r.review}
 										</p>
 										<button className="font-inter text-button underline mt-2" onClick={() => {setExpandedCardId(expandedCardId === r.id ? null : r.id);}}>
@@ -109,10 +109,10 @@ export default function Reviews() {
 						</div>
 						{isDesktop && (
 							<div className="glide__arrows absolute bottom-0 left-1/2 transform -translate-x-1/2 flex justify-center gap-5 w-full z-10" data-glide-el="controls" style={{ pointerEvents: 'none' }}>
-								<button data-glide-dir="<" className="text-3xl text-text hover:text-button transition-colors duration-200 focus:outline-none rounded-full p-1 shadow-md" aria-label="Previous slide" style={{ pointerEvents: 'auto' }}>
+								<button data-glide-dir="<" className="text-3xl text-button hover:text-button transition-colors duration-200 focus:outline-none rounded-full p-1 shadow-md" aria-label="Previous slide" style={{ pointerEvents: 'auto' }}>
 									<FaArrowCircleLeft />
 								</button>
-								<button data-glide-dir=">" className="text-3xl text-text hover:text-button transition-colors duration-200 focus:outline-none rounded-full p-1 shadow-md" aria-label="Next slide" style={{ pointerEvents: 'auto' }}>
+								<button data-glide-dir=">" className="text-3xl text-button hover:text-button transition-colors duration-200 focus:outline-none rounded-full p-1 shadow-md" aria-label="Next slide" style={{ pointerEvents: 'auto' }}>
 									<FaArrowCircleRight />
 								</button>
 							</div>
@@ -121,19 +121,19 @@ export default function Reviews() {
 				) : (
 					<div className="flex flex-col gap-5 w-full">
 						{mobileReviews.map((r) => (
-							<div key={r.id} className={`bg-secondBackground rounded-xl p-5 flex flex-col gap-2 text-text items-start font-inter relative overflow-hidden transition-all duration-500 ease-in-out ${expandedCardId === r.id ? "max-h-[1000px]" : "max-h-[300px]"}`}>
+							<div key={r.id} className={`bg-text2 rounded-xl p-5 flex flex-col gap-2 text-text items-start font-inter relative overflow-hidden transition-all duration-500 ease-in-out ${expandedCardId === r.id ? "max-h-[1000px]" : "max-h-[300px]"}`}>
 								<img className="absolute right-4 top-2" src="/linkedin.svg" alt="Linkedin logo"/>
 								<div className="flex gap-2 items-center">
-									<span className="text-xl font-semibold bg-background rounded-full flex w-11 h-11 justify-center items-center">
+									<span className="text-xl font-semibold bg-background rounded-full text-testBackground flex w-11 h-11 justify-center items-center">
 										{r.iniziale}
 									</span>
-									<div className="text-sm font-medium">
+									<div className="text-sm font-medium text-testBackground">
 										<h3>{r.name}</h3>
 										<p>{r.role}</p>
 										<img src="/stars.png" alt="Stars" />
 									</div>
 								</div>
-								<p className="mt-2 whitespace-pre-line">
+								<p className="mt-2 whitespace-pre-line text-testBackground">
 									"{expandedCardId === r.id ? r.review : r.review.length > 86 ? r.review.slice(0, 86) + "..." : r.review}
 								</p>
 								<button className="font-inter text-button underline mt-2" onClick={() => {setExpandedCardId(expandedCardId === r.id ? null : r.id);}}>
@@ -143,7 +143,7 @@ export default function Reviews() {
 						))}
 						{reviews.length > 3 && (
 							<button
-								className="font-inter text-text bg-button self-center px-3 py-2 rounded-full"
+								className="font-inter text-testBackground bg-button self-center px-3 py-2"
 								onClick={() => setShowAllMobile((prev) => !prev)}
 							>
 								{showAllMobile ? "Mostra meno" : "Mostra tutte"}

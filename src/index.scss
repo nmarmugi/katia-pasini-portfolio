@@ -8,14 +8,9 @@
 
 :root {
   --color-background: #0A0E2A;
-  --color-secondBackground: #2F354F;
-  --color-thirdBackground: #191E39;
-  --color-fourthBackground: #B0B3C6;
-  --color-glideBackground: #2E3C67;
-  --color-card1: #9A38A7;
-  --color-card2: #394DA8;
-  --color-card3: #BE0D86;
-  --color-text: #F5F1ED;
+  --color-testBackground: #F8FDFF;
+  --color-text2: #063550;
+  --color-p: #42565D;
   --color-button: #D4A017;
   --font-caladea: 'Caladea', serif;
   --font-inter: 'Inter', sans-serif;
@@ -25,6 +20,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 *::-webkit-scrollbar {
@@ -55,4 +51,8 @@
 
 *:hover::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+body {
+  overflow: hidden;
 }

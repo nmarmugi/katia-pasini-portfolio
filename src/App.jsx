@@ -8,6 +8,8 @@ import Reviews from "./components/reviews";
 import Form from "./components/form";
 import Footer from "./components/footer";
 import UtilsAndLanguages from "./components/utilsAndLanguages";
+import ContactMe from "./components/contactMe";
+import ContactMeTwo from "./components/contactMeTwo";
 
 function App() {
   return (
@@ -18,7 +20,9 @@ function App() {
       <Designer />
       <UtilsAndLanguages />
       <Glide />
+      <ContactMe />
       <HowWork />
+      <ContactMeTwo />
       <Reviews />
       <Form />
       <Footer />

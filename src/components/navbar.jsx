@@ -7,7 +7,6 @@ export default function Navbar() {
 	const [showMenu, setShowMenu] = useState(false);
 
 	const links = [
-		{ href: "#home", label: "Home" },
 		{ href: "#about", label: "Chi sono" },
 		{ href: "#projects", label: "Progetti" },
 		{ href: "#references", label: "Referenze" },
@@ -25,20 +24,20 @@ export default function Navbar() {
 
 	return (
 		<>
-			<div className="bg-background h-[88px] md:h-[60px] flex justify-center items-center px-5 fixed top-0 w-full z-50">
+			<div className={`${isOpen ? "bg-text2" : 'bg-[#97D1E6]/70 backdrop-blur-xl'} h-[88px] md:h-[60px] flex justify-center items-center px-5 fixed top-0 w-full z-50`}>
 				<div className="w-full max-w-[1440px] flex justify-between items-center">
-					<h2 className={`font-caladea text-text font-bold text-lg md:text-sm transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}>
+					<h2 className={`font-caladea text-testBackground font-bold text-lg md:text-base transition-opacity duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`}>
 						Katia - UX/UI Designer
 					</h2>
 
 					<Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
-					<div className={`hidden md:flex justify-center items-center gap-8 text-text font-caladea font-bold text-sm`}>
-						{links.map((link, index) => (
+					<div className={`hidden md:flex justify-center items-center gap-5 text-testBackground font-caladea font-bold text-base`}>
+						{links.map((link) => (
 							<a key={link.href} href={link.href}>
 								{link.label}
 							</a>
 						))}
-						<a href={CV} download className="p-2 px-3 rounded-full font-inter bg-button">
+						<a href={CV} download className="p-2 px-3 text-md font-inter bg-white/10 backdrop-blur-xl text-testBackground">
 							Scarica il mio CV
 						</a>
 					</div>
@@ -46,13 +45,13 @@ export default function Navbar() {
 			</div>
 
 			{showMenu && (
-				<div className={`fixed z-10 inset-0 bg-background flex flex-col justify-center items-center gap-8 text-text font-caladea font-bold text-2xl transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}>
+				<div className={`fixed z-10 inset-0 bg-text2 flex flex-col justify-center items-center gap-8 text-testBackground font-caladea font-bold text-2xl transition-opacity duration-500 ${isOpen ? "opacity-100" : "opacity-0"}`}>
 					{links.map((link, index) => (
 						<a key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`transition-all duration-500 ease-out transform ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`} style={{ transitionDelay: `${index * 100}ms` }}>
 							{link.label}
 						</a>
 					))}
-					<a href={CV} download className="p-2 px-3 rounded-full text-xl font-inter bg-button">
+					<a href={CV} download className="p-2 px-3 text-md font-inter bg-white/10 backdrop-blur-xl text-testBackground">
 						Scarica il mio CV
 					</a>
 				</div>
