@@ -17,6 +17,7 @@ module.exports = {
         background: "var(--color-background)",
         secondBackground: "var(--color-secondBackground)",
         thirdBackground: "var(--color-thirdBackground)",
+        fourthBackground: "var(--color-fourthBackground)",
         glideBackground: "var(--color-glideBackground)",
         card1: "var(--color-card1)",
         card2: "var(--color-card2)",

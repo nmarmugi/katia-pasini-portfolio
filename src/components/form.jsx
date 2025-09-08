@@ -61,14 +61,14 @@ export default function Form() {
                                 <ValidationError prefix="Message" field="message" errors={state.errors} />
                             </div>
                             <div className='w-full flex flex-col gap-3 lg:flex-row items-center justify-center'>
-                                <div className='w-full flex flex-col gap-1 lg:w-1/1'>
+                                <div className='w-full flex flex-col gap-1 lg:w-1/2'>
                                     <label htmlFor="email" className="font-inter text-text md:text-lg">
                                         Email*
                                     </label>
                                     <input id="email" type="email" name="email" placeholder='Scrivi qui...' className='rounded-md pl-2 py-1 font-inter' required value={email} onChange={(e) => setEmail(e.target.value)} />
                                     <ValidationError prefix="Email" field="email" errors={state.errors} />
                                 </div>
-                                <div className='w-full flex flex-col gap-1 lg:w-1/1'>
+                                <div className='w-full flex flex-col gap-1 lg:w-1/2'>
                                     <label htmlFor="name" className="font-inter text-text md:text-lg">
                                         Nome Azienda
                                     </label>
@@ -82,7 +82,7 @@ export default function Form() {
                                     Grazie per avermi contattato!
                                 </span>
                             }
-                            <button type="submit" disabled={state.submitting} className='w-full bg-button text-text py-2 rounded-md text-xl md:text-[22px]'>
+                            <button type="submit" disabled={state.submitting} className='w-full bg-button text-text py-2 px-3 rounded-full text-xl md:text-[22px]'>
                                 Inviami un messaggio
                             </button>
                         </form>

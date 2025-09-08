@@ -38,7 +38,7 @@ export default function Navbar() {
 								{link.label}
 							</a>
 						))}
-						<a href={CV} download className="p-2 rounded-md font-inter bg-button">
+						<a href={CV} download className="p-2 px-3 rounded-full font-inter bg-button">
 							Scarica il mio CV
 						</a>
 					</div>
@@ -52,7 +52,7 @@ export default function Navbar() {
 							{link.label}
 						</a>
 					))}
-					<a href={CV} download className="p-2 rounded-md text-xl font-inter bg-button">
+					<a href={CV} download className="p-2 px-3 rounded-full text-xl font-inter bg-button">
 						Scarica il mio CV
 					</a>
 				</div>

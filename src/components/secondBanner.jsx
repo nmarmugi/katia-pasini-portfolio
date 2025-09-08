@@ -24,14 +24,14 @@ export default function SecondBanner() {
 						10 anni tra le pagine dei libri e gli schermi digitali: dalla tipografia editoriale milanese alle startup che scalano il web. Oggi affianco i team tecnici con Figma in una mano e un caffè nell'altra.
 					</p>
 					<div className="md:max-w-[510px] mt-4 w-full flex justify-center">
-						<Card>
-							<h2 className="font-inter text-lg text-text font-semibold text-center md:text-[22px]">
+						<Card bg={'fourthBackground'}>
+							<h2 className="font-inter text-lg text-thirdBackground font-semibold text-center md:text-[22px]">
 								Mi aggiorno costantemente su
 							</h2>
 							<div className="flex justify-center flex-wrap gap-2">
 								{
 									updates.map((update =>
-									<span key={update.id} className="font-inter font-light text-text text-xs md:text-base p-1 border border-text rounded-2xl">
+									<span key={update.id} className="font-inter font-light text-text text-xs md:text-base p-1 bg-thirdBackground rounded-2xl">
 										{update.label}
 									</span>))
 								}

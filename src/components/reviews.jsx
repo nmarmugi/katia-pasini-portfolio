@@ -143,7 +143,7 @@ export default function Reviews() {
 						))}
 						{reviews.length > 3 && (
 							<button
-								className="font-inter text-text bg-button self-center px-4 py-2 rounded-md"
+								className="font-inter text-text bg-button self-center px-3 py-2 rounded-full"
 								onClick={() => setShowAllMobile((prev) => !prev)}
 							>
 								{showAllMobile ? "Mostra meno" : "Mostra tutte"}

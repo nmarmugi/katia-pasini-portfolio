@@ -6,6 +6,8 @@ import Glide from "./components/glide";
 import HowWork from "./components/howWork";
 import Reviews from "./components/reviews";
 import Form from "./components/form";
+import Footer from "./components/footer";
+import UtilsAndLanguages from "./components/utilsAndLanguages";
 
 function App() {
   return (
@@ -14,10 +16,12 @@ function App() {
       <About />
       <SecondBanner />
       <Designer />
+      <UtilsAndLanguages />
       <Glide />
       <HowWork />
       <Reviews />
       <Form />
+      <Footer />
     </div>
   );
 }

@@ -87,7 +87,7 @@ export default function HowWork() {
 					<h4 className="text-text font-inter font-semibold text-xl md:text-2xl text-center">
 						Vuoi avere maggiori info sui progetti o conoscerne di nuovi?
 					</h4>
-					<a href={'#'} className="p-2 rounded-md text-md font-inter bg-button text-text">
+					<a href={'#'} className="p-2 px-3 rounded-full text-md font-inter bg-button text-text">
 						Contattami
 					</a>
 				</div>
@@ -123,7 +123,7 @@ export default function HowWork() {
 					<h4 className="text-text font-inter font-semibold text-xl md:text-2xl text-center">
 						Vogliamo costruire un prodotto che piace davvero, a chi lo usa e a chi lo crea?
 					</h4>
-					<a href={'#'} className="p-2 rounded-md text-md font-inter bg-button text-text">
+					<a href={'#'} className="p-2 px-3 rounded-full text-md font-inter bg-button text-text">
 						Parliamo di come evitare i loop creativi
 					</a>
 					<span className="text-text font-inter font-light italic text-sm  md:text-base text-center">
