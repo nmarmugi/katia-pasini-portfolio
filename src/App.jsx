@@ -5,6 +5,7 @@ import Designer from "./components/designer";
 import Glide from "./components/glide";
 import HowWork from "./components/howWork";
 import Reviews from "./components/reviews";
+import Form from "./components/form";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Glide />
       <HowWork />
       <Reviews />
+      <Form />
     </div>
   );
 }

@@ -7,6 +7,7 @@ export default function Reviews() {
 	const glideInstance = useRef(null);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [expandedCardId, setExpandedCardId] = useState(null);
+	const [showAllMobile, setShowAllMobile] = useState(false);
 
 	const reviews = [
 		{ id: 1, iniziale: "P", name: "Pablo P.", role: "Software Engineer", review: "I have the pleasure of working with Katia Pasini, a highly skilled UX/UI designer. Katia consistently demonstrated exceptional design skills and a deep understanding of user experience principles. Her ability to translate complex requirements into intuitive and visually appealing designs is truly impressive. Katia's attention to detail and commitment to delivering high-quality work make her an invaluable asset to our team. She is always proactive in seeking feedback and iterating on her designs to ensure they met the needs of our users." },
@@ -66,6 +67,8 @@ export default function Reviews() {
 		};
 	}, []);
 
+	const mobileReviews = showAllMobile ? reviews : reviews.slice(0, 3);
+
 	return (
 		<div className="bg-background px-5 py-10 flex justify-center items-center">
 			<div className="w-full max-w-[1440px] flex flex-col justify-center items-center md:px-10 gap-10">
@@ -117,7 +120,7 @@ export default function Reviews() {
 					</div>
 				) : (
 					<div className="flex flex-col gap-5 w-full">
-						{reviews.map((r) => (
+						{mobileReviews.map((r) => (
 							<div key={r.id} className={`bg-secondBackground rounded-xl p-5 flex flex-col gap-2 text-text items-start font-inter relative overflow-hidden transition-all duration-500 ease-in-out ${expandedCardId === r.id ? "max-h-[1000px]" : "max-h-[300px]"}`}>
 								<img className="absolute right-4 top-2" src="/linkedin.svg" alt="Linkedin logo"/>
 								<div className="flex gap-2 items-center">
@@ -138,6 +141,14 @@ export default function Reviews() {
 								</button>
 							</div>
 						))}
+						{reviews.length > 3 && (
+							<button
+								className="font-inter text-text bg-button self-center px-4 py-2 rounded-md"
+								onClick={() => setShowAllMobile((prev) => !prev)}
+							>
+								{showAllMobile ? "Mostra meno" : "Mostra tutte"}
+							</button>
+						)}
 					</div>
 				)}
 			</div>
