@@ -51,7 +51,7 @@ export default function Form() {
                     <div className='w-full lg:w-1/2'>
                         <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
                             <div className='w-full flex flex-col gap-1'>
-                                <label htmlFor="message" className="font-inter text-text md:text-xl md:text-start text-center">
+                                <label htmlFor="message" className="font-inter text-text md:text-xl">
                                     La tua risposta alla domanda qui sopra*
                                 </label>
                                 <textarea id="message" name="message" placeholder='Scrivi una risposta...' className='rounded-md p-2 resize-none h-32 font-inter' minLength={50} required value={message} onChange={(e) => setMessage(e.target.value)}/>
