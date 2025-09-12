@@ -12,10 +12,59 @@ export default function SecondBanner() {
 	];
 
 	return (
-		<div className="bg-testBackground px-5 py-10 flex justify-center items-center">
+		<div className="bg-testBackground px-5 py-20 flex justify-center items-center">
 			<div className="w-full max-w-[1440px] flex flex-col lg:flex-row justify-center items-center md:px-10 gap-8">
 				<div className="flex justify-center lg:justify-start w-full lg:w-1/2">
-					<img className="w-full max-w-[300px] md:max-w-[421px]" src="/secondBanner.svg" alt='Image second banner' />
+					<div className="relative w-[300px] md:w-[421px] h-[435px] md:h-[590px] lg:h-[550px]">
+						<motion.img
+							src="/3image.svg"
+							alt="Background layer"
+							className="absolute w-full h-auto top-0 left-0 z-0"
+							initial={{ x: -30, y: 99, rotate: -45, scale: 1 }}
+							whileInView={{ y: 60, rotate: 0 }}
+							viewport={{ once: true, amount: 0.8 }}
+							transition={{
+								y: { type: "spring", stiffness: 70, damping: 10, delay: 0.3 },
+								rotate: { type: "spring", stiffness: 70, damping: 20, delay: 1.2 },
+							}}
+						/>
+						<motion.img
+							src="/4image.svg"
+							alt="Third layer"
+							className="absolute w-full h-auto top-0 left-0 z-10"
+							initial={{ x: -20, y: 66, rotate: -45, scale: 1 }}
+							whileInView={{ y: 40, rotate: 0 }}
+							viewport={{ once: true, amount: 0.8 }}
+							transition={{
+								y: { type: "spring", stiffness: 70, damping: 10, delay: 0.3 },
+								rotate: { type: "spring", stiffness: 70, damping: 20, delay: 1.2 },
+							}}
+						/>
+						<motion.img
+							src="/2image.svg"
+							alt="Second layer"
+							className="absolute w-full h-auto top-0 left-0 z-20"
+							initial={{ x: -10, y: 33, rotate: -45, scale: 1 }}
+							whileInView={{ y: 20, rotate: 0 }}
+							viewport={{ once: true, amount: 0.8 }}
+							transition={{
+								y: { type: "spring", stiffness: 70, damping: 10, delay: 0.3 },
+								rotate: { type: "spring", stiffness: 70, damping: 20, delay: 1.2 },
+							}}
+						/>
+						<motion.img
+							src="/1image.svg"
+							alt="Top layer"
+							className="absolute w-full h-auto top-0 left-0 z-30"
+							initial={{ x: 0, y: 0, rotate: -45, scale: 1 }}
+							whileInView={{ y: 0, rotate: 0 }}
+							viewport={{ once: true, amount: 0.8 }}
+							transition={{
+								y: { type: "spring", stiffness: 70, damping: 10, delay: 0.3 },
+								rotate: { type: "spring", stiffness: 70, damping: 20, delay: 1.2 },
+							}}
+						/>
+					</div>
 				</div>
 				<div className="flex flex-col lg:items-end gap-5 w-full lg:w-1/2">
 					<h2 className="font-inter text-2xl md:text-[30px] text-text2 font-semibold lg:text-end">

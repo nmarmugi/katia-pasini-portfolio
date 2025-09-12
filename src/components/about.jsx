@@ -47,7 +47,7 @@ export default function About() {
 			<div className="w-full max-w-[1440px] flex justify-between items-center md:px-10">
 				<div className="flex flex-col items-center gap-4 w-full">
 					<div className="flex items-center gap-5">
-						<div className="flex flex-col items-center gap-1 md:gap-6">
+						<div className="flex flex-col items-center gap-1 md:gap-6 min-h-[120px] md:min-h-[180px]">
 							<h2 className="font-inter italic text-testBackground font-extralight mb-3 md:mb-0 md:text-[30px]">
 								Dietro ogni pixel c'è una persona
 							</h2>
