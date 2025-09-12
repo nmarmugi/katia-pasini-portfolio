@@ -1,6 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function Form() {
     const [state, handleSubmit] = useForm("movnyywl");
@@ -8,15 +9,18 @@ export default function Form() {
     const [message, setMessage] = useState("");
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
+    const [isExploding, setIsExploding] = useState(false);
 
     useEffect(() => {
         if (state.succeeded) {
+            setIsExploding(true);
             setShowSuccess(true);
             setMessage("");
             setEmail("");
             setName("");
             const timer = setTimeout(() => {
                 setShowSuccess(false);
+                setIsExploding(false)
             }, 5000);
 
             return () => clearTimeout(timer);
@@ -63,7 +67,7 @@ export default function Form() {
                                 </label>
                                 <textarea id="message" name="message" placeholder='Scrivi una risposta...' className='border-gray-300 border-2 rounded-md p-2 resize-none h-32 font-inter' minLength={50} required value={message} onChange={(e) => setMessage(e.target.value)}/>
                                 <p className="font-inter text-text2 text-sm">
-                                    0/50 caratteri minimi per inviare
+                                    {message.length}/50 caratteri minimi per inviare
                                 </p>
                                 <ValidationError prefix="Message" field="message" errors={state.errors} />
                             </div>
@@ -89,9 +93,12 @@ export default function Form() {
                                     Grazie per avermi contattato!
                                 </span>
                             }
-                            <button type="submit" disabled={state.submitting} className='w-full bg-blueGradientOrizontal text-testBackground py-2 px-3 text-xl md:text-[22px]'>
-                                Inviami un messaggio
-                            </button>
+                            {isExploding && <ConfettiExplosion force={0.6} duration={2500} particleCount={80} width={1000} />}
+                            <div className='w-full'>
+                                <button type="submit" disabled={state.submitting} className='w-full bg-blueGradientOrizontal text-testBackground py-2 px-3 text-xl md:text-[22px]'>
+                                    Inviami un messaggio
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
