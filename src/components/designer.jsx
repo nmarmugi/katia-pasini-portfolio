@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Card from "./card";
+import { motion } from "framer-motion";
 
 export default function Designer() {
 	const [showTooltip, setShowTooltip] = useState(false);
@@ -18,15 +19,35 @@ export default function Designer() {
 						<span className="font-bold">Chief Happiness Officer</span> e UX Consultant non ufficiale.
 					</p>
 					<div className="flex flex-col items-center lg:flex-row-reverse mt-3 lg:justify-center lg:mt-6 gap-4 lg:gap-10">
-						<div className="flex w-full relative max-w-[470px]" onClick={() => setShowTooltip(!showTooltip)}>
-							<img className="w-full max-w-[470px] lg:w-[470px] lg:min-h-[432.39px] cursor-pointer" src="/katia-brando.svg" alt="Katia e Brando" />
-							{
-								showTooltip &&
-									<img src="/Tooltip.svg" alt="tooltip" className="absolute right-32 -top-5 w-52 lg:right-32 lg:-top-2"/>
-							}
-						</div>
-						<div className="w-full flex justify-center max-w-[470px] lg:w-[470px] lg:min-w-[470px] lg:min-h-[405px]">
-							<Card bg={'testBackground'}>
+						<motion.div
+							className="flex w-full relative max-w-[470px]"
+							onClick={() => setShowTooltip(!showTooltip)}
+							initial={{ opacity: 0, x: -50, scale: 0.95 }}
+							whileInView={{ opacity: 1, x: 0, scale: 1 }}
+							transition={{ type: "spring", stiffness: 50, damping: 20, duration: 0.8 }}
+							viewport={{ once: true, amount: 0.5 }}
+						>
+							<img
+								className="w-full max-w-[470px] lg:w-[470px] lg:min-h-[432.39px] cursor-pointer"
+								src="/katia-brando.svg"
+								alt="Katia e Brando"
+							/>
+							{showTooltip && (
+								<img
+									src="/Tooltip.svg"
+									alt="tooltip"
+									className="absolute right-32 -top-5 w-52 lg:right-32 lg:-top-2"
+								/>
+							)}
+						</motion.div>
+						<motion.div
+							className="w-full flex justify-center max-w-[470px] lg:w-[470px] lg:min-w-[470px] lg:min-h-[405px]"
+							initial={{ opacity: 0, x: 50, scale: 0.95 }}
+							whileInView={{ opacity: 1, x: 0, scale: 1 }}
+							transition={{ type: "spring", stiffness: 50, damping: 20, duration: 0.8 }}
+							viewport={{ once: true, amount: 0.5 }}
+						>
+							<Card bg={"testBackground"}>
 								<div className="flex justify-start w-full lg:mb-3">
 									<h3 className="font-inter text-text2 font-semibold text-lg md:text-3xl">
 										La Mia Design Philosophy
@@ -43,7 +64,7 @@ export default function Designer() {
 									</p>
 								</div>
 							</Card>
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>

@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import GlideJs from "@glidejs/glide";
 
 export default function Glide() {
+	
 	useEffect(() => {
 		const glide = new GlideJs(".glide", {
 			type: "carousel",
@@ -60,7 +61,6 @@ export default function Glide() {
 													{gli.paragraph}
 												</p>
 											</div>
-
 											<div className="flex flex-wrap justify-center md:justify-start gap-2 md:mt-4 md:mb-4">
 												{gli.array.map((tag, i) => (
 													<span key={i} className="px-3 py-1 bg-testBackground text-text2 rounded-full text-xs md:text-sm font-semibold">
@@ -68,7 +68,6 @@ export default function Glide() {
 													</span>
 												))}
 											</div>
-
 											<div className="w-full max-w-[280px] md:max-w-[450px] bg-blueGradientVertical p-3 rounded-xl font-inter text-testBackground text-xs font-light italic flex flex-col gap-1 md:text-lg">
 												<h4>
 													{gli.secondTitle}
@@ -83,7 +82,6 @@ export default function Glide() {
 							}
 						</div>
 					</div>
-
 					<div className="glide__bullets flex justify-center mt-7 md:mt-4 lg:mt-3 gap-3 !static !transform-none" data-glide-el="controls[nav]">
 						{
 							glide.map((gli, i) => 

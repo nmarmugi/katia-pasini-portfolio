@@ -115,7 +115,7 @@ export default function HowWork() {
 			{activeModal !== null && (
 				<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setActiveModal(null)}>
 					<div className="bg-white text-black rounded-xl p-6 px-9 md:px-6 w-[90%] max-w-5xl relative" onClick={(e) => e.stopPropagation()}>
-						<button className="absolute top-3 right-3 text-xl" onClick={() => setActiveModal(null)}>
+						<button className="absolute top-2 right-2 text-xl" onClick={() => setActiveModal(null)}>
 							<FiXCircle size={25} color="#063550" />
 						</button>
 

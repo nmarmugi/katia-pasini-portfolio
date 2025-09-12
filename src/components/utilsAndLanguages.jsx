@@ -1,4 +1,5 @@
 import Card from "./card";
+import { motion } from "framer-motion";
 
 export default function UtilsAndLanguages() {
 
@@ -30,6 +31,7 @@ export default function UtilsAndLanguages() {
 		{id: 6, label: 'Calendly'},
 		{id: 7, label: 'WeTransfer'}
 	];
+	
     return (
         <div className="bg-testBackground px-5 py-10 flex justify-center items-center">
 			<div className="w-full max-w-[1440px] flex flex-col justify-center items-center md:px-10 gap-10 md:gap-20">
@@ -47,12 +49,23 @@ export default function UtilsAndLanguages() {
 										</h3>
 									</div>
 									<div className="flex justify-start w-full flex-wrap gap-2 gap-y-3">
-										{
-											design.map((des =>
-											<span key={des.id} className="font-inter text-testBackground bg-text2 text-xs md:text-base p-1 px-2 rounded-2xl font-semibold">
+										{design.map((des, index) => (
+											<motion.span
+												key={des.id}
+												className="font-inter text-testBackground text-xs md:text-base p-1 px-2 bg-text2 rounded-2xl font-semibold"
+												initial={{ opacity: 0, y: 20, scale: 0.8, rotate: -5 }}
+												whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+												transition={{
+													type: "spring",
+													stiffness: 150,
+													damping: 10,
+													delay: index * 0.1
+												}}
+												viewport={{ once: true, amount: 0.5 }}
+											>
 												{des.label}
-											</span>))
-										}
+											</motion.span>
+										))}
 									</div>
 								</div>
 							</Card>
@@ -66,12 +79,23 @@ export default function UtilsAndLanguages() {
 										</h3>
 									</div>
 									<div className="flex justify-start w-full flex-wrap gap-2 gap-y-3">
-										{
-											res.map((re =>
-											<span key={re.id} className="font-inter text-testBackground bg-text2 text-xs px-2 md:text-base p-1 rounded-2xl font-semibold">
+										{res.map((re, index) => (
+											<motion.span
+												key={re.id}
+												className="font-inter text-testBackground text-xs md:text-base p-1 px-2 bg-text2 rounded-2xl font-semibold"
+												initial={{ opacity: 0, y: 20, scale: 0.8, rotate: -5 }}
+												whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+												transition={{
+													type: "spring",
+													stiffness: 150,
+													damping: 10,
+													delay: index * 0.1
+												}}
+												viewport={{ once: true, amount: 0.5 }}
+											>
 												{re.label}
-											</span>))
-										}
+											</motion.span>
+										))}
 									</div>
 								</div>
 							</Card>
@@ -85,12 +109,23 @@ export default function UtilsAndLanguages() {
 										</h3>
 									</div>
 									<div className="flex justify-start w-full flex-wrap gap-2 gap-y-3">
-										{
-											orga.map((or =>
-											<span key={or.id} className="font-inter px-2 text-testBackground bg-text2 text-xs md:text-base p-1 font-semibold rounded-2xl">
+										{orga.map((or, index) => (
+											<motion.span
+												key={or.id}
+												className="font-inter text-testBackground text-xs md:text-base p-1 px-2 bg-text2 rounded-2xl font-semibold"
+												initial={{ opacity: 0, y: 20, scale: 0.8, rotate: -5 }}
+												whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+												transition={{
+													type: "spring",
+													stiffness: 150,
+													damping: 10,
+													delay: index * 0.1
+												}}
+												viewport={{ once: true, amount: 0.5 }}
+											>
 												{or.label}
-											</span>))
-										}
+											</motion.span>
+										))}
 									</div>
 								</div>
 							</Card>
@@ -102,7 +137,13 @@ export default function UtilsAndLanguages() {
 						Competenze linguistiche
 					</h3>
 					<div className="w-full flex flex-col items-center gap-8 md:flex-row md:justify-center">
-						<div className="w-full md:w-1/2">
+						<motion.div
+							className="w-full md:w-1/2"
+							initial={{ opacity: 0, y: 30, rotate: -3, scale: 0.95 }}
+							whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
+							transition={{ type: "spring", stiffness: 80, damping: 15, duration: 0.8, delay: 0.1 }}
+							viewport={{ once: true, amount: 0.5 }}
+						>
 							<Card bg={'greenish'}>
 								<div className="flex justify-start w-full">
 									<h3 className="font-inter text-text2 font-semibold text-[22px]">
@@ -115,8 +156,14 @@ export default function UtilsAndLanguages() {
 									</h3>
 								</div>
 							</Card>
-						</div>
-						<div className="w-full md:w-1/2">
+						</motion.div>
+						<motion.div
+							className="w-full md:w-1/2"
+							initial={{ opacity: 0, y: 30, rotate: 3, scale: 0.95 }}
+							whileInView={{ opacity: 1, y: 0, rotate: 0, scale: 1 }}
+							transition={{ type: "spring", stiffness: 80, damping: 15, duration: 0.8, delay: 0.2 }}
+							viewport={{ once: true, amount: 0.5 }}
+						>
 							<Card bg={'england'}>
 								<div className="flex justify-start w-full">
 									<h3 className="font-inter text-text2 font-semibold text-[22px]">
@@ -129,7 +176,7 @@ export default function UtilsAndLanguages() {
 									</h3>
 								</div>
 							</Card>
-						</div>
+						</motion.div>
 					</div>
 				</div>
             </div>

@@ -1,6 +1,40 @@
-import Card from "./card";
+import { useState, useEffect } from "react";
 
 export default function About() {
+	const [isSwitchOn, setIsSwitchOn] = useState(false);
+	const [typedCiao, setTypedCiao] = useState("");
+	const [typedSonoKatia, setTypedSonoKatia] = useState("");
+	const [typedDesigner, setTypedDesigner] = useState("");
+
+	useEffect(() => {
+		const ciao = "Ciao";
+		if (typedCiao.length < ciao.length) {
+			const timeout = setTimeout(() => {
+				setTypedCiao(ciao.slice(0, typedCiao.length + 1));
+			}, 100);
+			return () => clearTimeout(timeout);
+		}
+	}, [typedCiao]);
+
+	useEffect(() => {
+		const sonoKatia = "sono Katia,";
+		if (typedCiao === "Ciao" && typedSonoKatia.length < sonoKatia.length) {
+			const timeout = setTimeout(() => {
+				setTypedSonoKatia(sonoKatia.slice(0, typedSonoKatia.length + 1));
+			}, 100);
+			return () => clearTimeout(timeout);
+		}
+	}, [typedCiao, typedSonoKatia]);
+
+	useEffect(() => {
+		const designer = "una UX/UI Designer";
+		if (typedSonoKatia === "sono Katia," && typedDesigner.length < designer.length) {
+			const timeout = setTimeout(() => {
+				setTypedDesigner(designer.slice(0, typedDesigner.length + 1));
+			}, 100);
+			return () => clearTimeout(timeout);
+		}
+	}, [typedSonoKatia, typedDesigner]);
 
 	const contentCards = [
 		{ number: "10+", label: "Anni di sperimentazione e studio" },
@@ -19,17 +53,17 @@ export default function About() {
 							</h2>
 							<div className="flex gap-2 items-end">
 								<h2 className="font-inter text-testBackground font-semibold text-3xl md:text-[70px] md:h-12 h-10">
-									Ciao
+									{typedCiao}
 								</h2>
-								<div className="flex justify-end md:w-28 md:h-12 w-20 h-10 rounded-full bg-[#97D1E6] p-[2px]">
-									<img src="/katia-mobile.png" alt="Avatar Katia" />
+								<div onClick={() => setIsSwitchOn(!isSwitchOn)} className="flex items-center cursor-pointer md:w-[100px] md:h-12 w-[84px] h-10 rounded-full bg-[#97D1E6] p-[2px]">
+									<img src="/katia-mobile.png" alt="Avatar Katia" className={`w-10 h-10 md:w-12 md:h-12 transform transition-transform duration-300 ${isSwitchOn ? 'translate-x-0' : 'translate-x-full'}`} />
 								</div>
 								<h1 className="font-inter text-testBackground font-semibold text-3xl md:text-[70px] md:h-12 h-10">
-									sono Katia
+									{typedSonoKatia}
 								</h1>
 							</div>
 							<h2 className="font-inter text-testBackground font-semibold text-3xl md:text-[70px]">
-								una UX/UI Designer
+								{typedDesigner}
 							</h2>
 						</div>
 					</div>

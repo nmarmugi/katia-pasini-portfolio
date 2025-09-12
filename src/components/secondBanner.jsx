@@ -1,4 +1,5 @@
 import Card from "./card";
+import { motion } from 'framer-motion';
 
 export default function SecondBanner() {
 
@@ -29,12 +30,23 @@ export default function SecondBanner() {
 								Mi aggiorno costantemente su
 							</h2>
 							<div className="flex justify-center flex-wrap gap-2">
-								{
-									updates.map((update =>
-									<span key={update.id} className="font-inter text-testBackground text-xs md:text-base p-1 px-2 bg-text2 rounded-2xl font-semibold">
+								{updates.map((update, index) => (
+									<motion.span
+										key={update.id}
+										className="font-inter text-testBackground text-xs md:text-base p-1 px-2 bg-text2 rounded-2xl font-semibold"
+										initial={{ opacity: 0, y: 20, scale: 0.8, rotate: -5 }}
+										whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+										transition={{
+											type: "spring",
+											stiffness: 150,
+											damping: 10,
+											delay: index * 0.1
+										}}
+										viewport={{ once: true, amount: 0.5 }}
+									>
 										{update.label}
-									</span>))
-								}
+									</motion.span>
+								))}
 							</div>
 						</Card>
 					</div>

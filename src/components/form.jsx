@@ -1,5 +1,6 @@
 import { useForm, ValidationError } from '@formspree/react';
 import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
 
 export default function Form() {
     const [state, handleSubmit] = useForm("movnyywl");
@@ -37,7 +38,13 @@ export default function Form() {
                     </p>
                 </div>
                 <div className="w-full flex flex-col gap-5 lg:flex-row items-center justify-center">
-                    <div className="bg-text2 p-6 rounded-md flex flex-col gap-5 w-full lg:w-1/2">
+                    <motion.div
+                        className="bg-text2 p-6 rounded-md flex flex-col gap-5 w-full lg:w-1/2"
+                        initial={{ opacity: 0, y: 40, scale: 0.95, rotate: -2 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+                        transition={{ type: "spring", stiffness: 80, damping: 18, duration: 0.8 }}
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
                         <h3 className="font-inter text-testBackground font-semibold text-lg md:text-3xl text-center mb-4">
                             Prima di contattarmi, rispondi a questa domanda:
                         </h3>
@@ -47,7 +54,7 @@ export default function Form() {
                         <p className="font-inter text-testBackground text-xs md:text-base font-light italic text-center">
                             PS: Se non rispondi alla domanda, il form non si invia. Sì, è una micro-interazione UX – ma funziona.
                         </p>
-                    </div>
+                    </motion.div>
                     <div className='w-full lg:w-1/2'>
                         <form onSubmit={handleSubmit} className='flex flex-col gap-5'>
                             <div className='w-full flex flex-col gap-1'>
