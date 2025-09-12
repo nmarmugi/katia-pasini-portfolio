@@ -4,6 +4,7 @@ import { LuArrowUpRight } from "react-icons/lu";
 import { IoFlashOutline } from "react-icons/io5";
 import { SlWrench } from "react-icons/sl";
 import { IoMdTrendingUp } from "react-icons/io";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function HowWork() {
 	const [activeModal, setActiveModal] = useState(null);
@@ -112,64 +113,77 @@ export default function HowWork() {
 					</div>
 				</div>
 			</div>
-			{activeModal !== null && (
-				<div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50" onClick={() => setActiveModal(null)}>
-					<div className="bg-white text-black rounded-xl p-6 px-9 md:px-6 w-[90%] max-w-5xl relative" onClick={(e) => e.stopPropagation()}>
-						<button className="absolute top-2 right-2 text-xl" onClick={() => setActiveModal(null)}>
-							<FiXCircle size={25} color="#063550" />
-						</button>
-
-						<div className="flex flex-col gap-4 font-inter font-light lg:text-2xl max-h-[90dvh] overflow-y-auto">
-							<span className="text-2xl lg:text-[40px] lg:mt-4">
-								{modalContent[activeModal].src}
-							</span>
-							<h2 className="font-inter text-text2 font-semibold text-2xl lg:text-[40px] mt-2 mb-4 lg:mt-6 lg:mb-12">
-								{modalContent[activeModal].title}
-							</h2>
-							<div className="bg-[#FFEEEE] flex flex-col p-3 lg:px-5 rounded-xl gap-2">
-								<div className="flex items-center gap-1">
-									<FiAlertCircle size={20} color="#B42318"/>
-									<h3 className="font-semibold text-[#B42318]">Il problema</h3>
-								</div>
-								<p className="text-[#D20C0C]">{modalContent[activeModal].problem}</p>
-							</div>
-
-							<div className="bg-[#FFEFE0] flex flex-col p-3 lg:px-5 rounded-xl gap-2">
-								<div className="flex items-center gap-1">
-									<IoFlashOutline size={20} color="#DB6F10" />
-									<h3 className="font-semibold text-[#DB6F10]">Sfida</h3>
-								</div>
-								<p className="text-[#F58C2F]">{modalContent[activeModal].sfida}</p>
-							</div>
-
-							<div className="flex flex-col lg:flex-row gap-4 w-full">
-								<div className="bg-[#E0F6FF] flex flex-col p-3 lg:px-5 rounded-xl w-full lg:w-1/2 gap-2">
+			<AnimatePresence>
+				{activeModal !== null && (
+					<motion.div
+						className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
+						onClick={() => setActiveModal(null)}
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.3 }}
+					>
+						<motion.div
+							className="bg-white text-black rounded-xl p-6 px-9 md:px-6 w-[90%] max-w-5xl relative"
+							onClick={(e) => e.stopPropagation()}
+							initial={{ scale: 0.8, opacity: 0 }}
+							animate={{ scale: 1, opacity: 1 }}
+							exit={{ scale: 0.8, opacity: 0 }}
+							transition={{ duration: 0.3, ease: "easeOut" }}
+						>
+							<button className="absolute top-2 right-2 text-xl" onClick={() => setActiveModal(null)}>
+								<FiXCircle size={25} color="#063550" />
+							</button>
+							<div className="flex flex-col gap-4 font-inter font-light lg:text-2xl max-h-[90dvh] overflow-y-auto">
+								<span className="text-2xl lg:text-[40px] lg:mt-4">
+									{modalContent[activeModal].src}
+								</span>
+								<h2 className="font-inter text-text2 font-semibold text-2xl lg:text-[40px] mt-2 mb-4 lg:mt-6 lg:mb-12">
+									{modalContent[activeModal].title}
+								</h2>
+								<div className="bg-[#FFEEEE] flex flex-col p-3 lg:px-5 rounded-xl gap-2">
 									<div className="flex items-center gap-1">
-										<SlWrench size={20} color="#0D80A3" />
-										<h3 className="font-semibold text-[#0D80A3]">Cosa ho fatto</h3>
+										<FiAlertCircle size={20} color="#B42318"/>
+										<h3 className="font-semibold text-[#B42318]">Il problema</h3>
 									</div>
-									<ul className="list-disc pl-5 text-[#3EA8C8]">
-										{modalContent[activeModal].do.map((item, i) => (
-											<li key={i}>{item}</li>
-										))}
-									</ul>
+									<p className="text-[#D20C0C]">{modalContent[activeModal].problem}</p>
 								</div>
-								<div className="bg-[#E0FFF6] flex flex-col p-3 lg:px-5 rounded-xl w-full lg:w-1/2 gap-2">
+								<div className="bg-[#FFEFE0] flex flex-col p-3 lg:px-5 rounded-xl gap-2">
 									<div className="flex items-center gap-1">
-										<IoMdTrendingUp size={20} color="#0DA36F" />
-										<h3 className="font-semibold text-[#0DA36F]">Il risultato</h3>
+										<IoFlashOutline size={20} color="#DB6F10" />
+										<h3 className="font-semibold text-[#DB6F10]">Sfida</h3>
 									</div>
-									<ul className="list-disc pl-5 text-[#19AE7B]">
-										{modalContent[activeModal].result.map((item, i) => (
-											<li key={i}>{item}</li>
-										))}
-									</ul>
+									<p className="text-[#F58C2F]">{modalContent[activeModal].sfida}</p>
+								</div>
+								<div className="flex flex-col lg:flex-row gap-4 w-full">
+									<div className="bg-[#E0F6FF] flex flex-col p-3 lg:px-5 rounded-xl w-full lg:w-1/2 gap-2">
+										<div className="flex items-center gap-1">
+											<SlWrench size={20} color="#0D80A3" />
+											<h3 className="font-semibold text-[#0D80A3]">Cosa ho fatto</h3>
+										</div>
+										<ul className="list-disc pl-5 text-[#3EA8C8]">
+											{modalContent[activeModal].do.map((item, i) => (
+												<li key={i}>{item}</li>
+											))}
+										</ul>
+									</div>
+									<div className="bg-[#E0FFF6] flex flex-col p-3 lg:px-5 rounded-xl w-full lg:w-1/2 gap-2">
+										<div className="flex items-center gap-1">
+											<IoMdTrendingUp size={20} color="#0DA36F" />
+											<h3 className="font-semibold text-[#0DA36F]">Il risultato</h3>
+										</div>
+										<ul className="list-disc pl-5 text-[#19AE7B]">
+											{modalContent[activeModal].result.map((item, i) => (
+												<li key={i}>{item}</li>
+											))}
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
-					</div>
-				</div>
-			)}
+						</motion.div>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 }
