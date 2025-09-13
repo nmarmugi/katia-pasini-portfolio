@@ -65,7 +65,7 @@ export default function Form() {
                                 <label htmlFor="message" className="font-inter text-text2 md:text-xl">
                                     La tua risposta alla domanda qui sopra*
                                 </label>
-                                <textarea id="message" name="message" placeholder='Scrivi una risposta...' className='border-gray-300 border-2 rounded-md p-2 resize-none h-32 font-inter' minLength={50} required value={message} onChange={(e) => setMessage(e.target.value)}/>
+                                <textarea id="message" name="message" placeholder='Scrivi una risposta...' className='border-gray-300 border-2 rounded-md p-2 resize-none h-32 font-inter' minLength={50} maxLength={350} required value={message} onChange={(e) => setMessage(e.target.value)}/>
                                 <p className="font-inter text-text2 text-sm">
                                     {message.length}/50 caratteri minimi per inviare
                                 </p>
@@ -93,11 +93,24 @@ export default function Form() {
                                     Grazie per avermi contattato!
                                 </span>
                             }
-                            {isExploding && <ConfettiExplosion force={0.6} duration={2500} particleCount={80} width={1000} />}
-                            <div className='w-full'>
-                                <button type="submit" disabled={state.submitting} className='w-full bg-blueGradientOrizontal text-testBackground py-2 px-3 text-xl md:text-[22px]'>
+                            <div className="w-full relative flex justify-center">
+                                <button 
+                                    type="submit" 
+                                    disabled={state.submitting} 
+                                    className='w-full bg-blueGradientOrizontal text-testBackground py-2 px-3 text-xl md:text-[22px]'
+                                >
                                     Inviami un messaggio
                                 </button>
+                                {isExploding && (
+                                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                                        <ConfettiExplosion 
+                                            force={0.6} 
+                                            duration={5000} 
+                                            particleCount={80} 
+                                            width={1000} 
+                                        />
+                                    </div>
+                                )}
                             </div>
                         </form>
                     </div>
